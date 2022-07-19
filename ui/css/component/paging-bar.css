@@ -1,0 +1,82 @@
+/* paging bar */
+
+
+.paging-bar .paging-text {
+    white-space: nowrap;
+    flex: 1;
+}
+
+.paging-bar select {
+    margin-right: 20px;
+}
+
+
+/* paging */
+
+.page-index-dot-left {
+    font-size: 30px;
+}
+
+.page-index-dot-right {
+    font-size: 30px;
+}
+
+.paging {
+    display: flex;
+}
+
+.select {
+    white-space: nowrap;
+    padding-top: 3px;
+}
+
+.p-left {
+    cursor: pointer;
+}
+
+.p-right {
+    cursor: pointer;
+}
+
+.paging .paging-number {
+    display: flex;
+    cursor: pointer;
+}
+
+.paging .page-index {
+    padding: 0 6.5px;
+}
+
+
+/* css text Trước và Sau */
+
+.color-text {
+    opacity: .5;
+}
+
+.border-index {
+    background-color: var(--primary-color) !important;
+}
+
+
+/* hiển thị data select */
+
+.show {
+    display: block !important;
+}
+
+
+/* focus vào data select */
+
+.focus-item {
+    color: #fff !important;
+    background-color: var(--primary-color) !important;
+}
+
+
+/* rotate icon */
+
+.rotate-icon {
+    transform: rotate(180deg);
+    transition: transform .3s linear;
+}

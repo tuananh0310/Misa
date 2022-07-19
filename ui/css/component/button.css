@@ -1,0 +1,89 @@
+.m-button {
+    height: 35px;
+    padding: 0 20px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-family: reg;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 100px;
+}
+
+.m-button:hover {
+    background-color: #2FBE8E;
+}
+
+.m-button:active {
+    background-color: #01B075;
+}
+
+.m-button--reload {
+    height: 35px;
+    width: 35px;
+    font-family: reg;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid rgb(226, 219, 219);
+    background: #fff;
+    background-image: url(../../assets/icon/refresh.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.m-button--duplicate {
+    height: 35px;
+    width: 35px;
+    font-family: reg;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid rgb(226, 219, 219);
+    background: #fff;
+    background-image: url(../../assets/icon/duplicate.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.m-button--reload:hover {
+    background-color: #dcd5d5;
+}
+
+.m-second-btn {
+    font-family: notosans semibold;
+    height: 36px;
+    border: 1px solid #cfcbcb;
+    color: #111;
+    background-color: transparent;
+    padding: 6px 16px;
+    margin-left: 35px;
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: nowrap;
+    outline: none;
+    min-width: 100px;
+}
+
+.m-second-btn:hover {
+    background-color: #d6d8df;
+}
+
+.m-second-btn:focus {
+    background-color: #b8bac4;
+}
+
+.m-btn-circle {
+    display: block;
+    height: 35px;
+    width: 35px;
+    border: 1px solid #bbb;
+    border-radius: 50%;
+    background: #E9EBEE;
+    outline: none;
+    cursor: pointer;
+}
+
+.m-btn-circle:hover {
+    background-color: var(--primary-color);
+}
+

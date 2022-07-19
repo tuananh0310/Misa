@@ -1,0 +1,44 @@
+@import url(./layout/navbarr.css);
+@import url(./layout/content.css);
+@import url(./component/button.css);
+@import url(./component/button.css);
+@import url(./component/combobox.css);
+@import url(./component/input.css);
+@import url(./component/icon.css);
+@import url(./common/common.css);
+@import url(./component/dialog.css);
+@import url(./component/combobox.css);
+@import url(./component/select.css);
+@import url(./component/table.css);
+@import url(./component/checkbox.css);
+@import url(./component/popup.css);
+@import url(./component/dialogtest.css);
+@import url(./component/toastmsg.css);
+@import url(./component/loading.css);
+@import url(./component/paging-bar.css);
+* {
+    font-size: 14px;
+    font-family: reg;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: reg;
+    src: url(../assets/font/GoogleSans-Regular.otf)
+}
+
+@font-face {
+    font-family: bol;
+    src: url(../assets/font/GoogleSans-Bold.otf)
+}
+
+@font-face {
+    font-family: ita;
+    src: url(../assets/font/GoogleSans-Italic.otf)
+}

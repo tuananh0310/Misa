@@ -1,0 +1,90 @@
+.mselect {
+    position: relative;
+    width: 250px;
+    margin-right: 15px;
+}
+
+.select {
+    height: 35px;
+    width: 100%;
+    padding-left: 10px;
+    line-height: 30px;
+    border: 1px solid #c7c7c7;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 4px;
+    outline:none;
+}
+
+.select:focus {
+    border-color: var(--primary-color);
+}
+
+.icon-select {
+    position: absolute;
+    height: 28px;
+    width: 31px;
+    right: 1px;
+    top: 1px;
+    cursor: pointer;
+}
+
+.icon-select:hover {
+    background-color: 
+    #e9ebee;
+    /* transform: rotate(180deg);
+    transition: transform .15s linear; */
+}
+
+.icon-select:hover+.icon-dropdown,
+.icon-dropdown:hover {
+    background-color: 
+    #e9ebee;
+}
+
+
+/* .icon-select:focus+.icon-dropdown,
+.icon-dropdown:focus {
+    transform: rotate(180deg);
+    transition: transform .15s linear;
+} */
+
+.icon-dropdown {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 8px;
+    top: 11px;
+    cursor: pointer;
+}
+
+
+/* css phần item của select */
+/* 
+.data-select {
+    position: absolute;
+    top: -165px;
+    border: 1px solid #c7c7c7;
+    display: none;
+}
+
+.data-select .select-item {
+    height: 32px;
+    width: 195px;
+    line-height: 32px;
+    background-color: #ffffff;
+    padding: 0 14px 0 10px;
+    margin-left: 1px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.select-item:hover {
+    background-color: #eceef1 !important;
+    color: rgb(6, 247, 6);
+}
+
+.select-item:focus-within {
+    background-color: #2ca01c !important;
+    color: #111111;
+} */

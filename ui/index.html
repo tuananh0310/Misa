@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/component/dialogtest.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+      integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Nhân Viên</title>
+  </head>
+  <body>
+    <!-- ========================================================== Sidebar ============================================================= -->
+    <div class="sidebar">
+      <div class="logo_content">
+        <div class="logo">
+          <!-- <img class="icon-misasoftware" src="/assets/favicon.ico" alt="" /> -->
+          <div class="logo_name">MISACukCuk</div>
+        </div>
+        <i class="bx bx-menu" id="btn-toggle"></i>
+      </div>
+      <ul class="nav_list">
+        <li>
+          <a href="#">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links_name">Tổng quan</span>
+          </a>
+          <span class="tooltip">Tổng quan</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-user"></i>
+            <span class="links_name">Người dùng</span>
+          </a>
+          <span class="tooltip">Người dùng</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-message-rounded"></i>
+            <span class="links_name">Tin nhắn</span>
+          </a>
+          <span class="tooltip">Tin nhắn</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-bar-chart-alt'></i>
+            <span class="links_name">Báo cáo</span>
+          </a>
+          <span class="tooltip">Báo cáo</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-folder"></i>
+            <span class="links_name">Danh mục</span>
+          </a>
+          <span class="tooltip">Danh mục</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cart-alt"></i>
+            <span class="links_name">Mua hàng</span>
+          </a>
+          <span class="tooltip">Mua hàng</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-save"></i>
+            <span class="links_name">Lưu trữ</span>
+          </a>
+          <span class="tooltip">Lưu trữ</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Thiết lập hệ thống</span>
+          </a>
+          <span class="tooltip">Thiết lập hệ thống</span>
+        </li>
+      </ul>
+      <div class="extra-nav"></div>
+      <div class="min-nav"></div>
+    </div>
+
+    <!-- ========================================================== Home_content ============================================================= -->
+
+    <div class="home_content">
+      <div class="home_content__header">
+        <div class="home_content__header-left">
+          <div class="home_content__header-left--img"></div>
+          <div class="home_content__header-left--text">Nhà hàng biển đông</div>
+          <div class="home_content__header-left--icon m-icon m-icon-down"></div>
+        </div>
+        <div class="home_content__header-right">
+          <div
+            class="home_content__header-right--notify m-icon m-icon-notify"
+          ></div>
+          <div class="home_content__header-right--avatar"></div>
+          <div class="home_content__header-right--text">Lê Tuấn Anh</div>
+          <div
+            class="home_content__header-right--more m-icon m-icon-more"
+          ></div>
+        </div>
+      </div>
+      <div class="home_content__main">
+        <div class="above-table">
+          <div class="content__header">
+            <div class="content__header-text">
+              <h2>Danh sách nhân viên</h2>
+            </div>
+            <div class="content__header-button">
+              <button
+                id="btn-add-employee"
+                class="content__header-button-add m-button ms-icon ms-icon-add"
+              >
+                Thêm nhân viên
+              </button>
+            </div>
+          </div>
+          <div class="content__nav">
+            <div class="content__nav-search">
+              <input
+                id="txtSearch"
+                class="m-input ms-icon ms-icon-search"
+                type="text"
+                placeholder="Tìm theo Mã,Tên hoặc số điện thoại"
+              />
+            </div>
+            <div class="department-position--search">
+              <div class="content__nav-search--department">
+                <select class="select" name="" id="searchDepartment">
+                  <option value="">Tất cả phòng ban</option>
+                  <option value="59d19422-6657-452e-a7db-e5d54223c257">
+                    Phòng Nhân Sự
+                  </option>
+                  <option value="4577565a-7e3e-493a-74dd-867949feb8b5">
+                    Phòng Kế Hoạch
+                  </option>
+                  <option value="17120d02-6ab5-3e43-18cb-66948daf6128">
+                    Phòng Hỗ Trợ Khách Hàng
+                  </option>
+                  <option value="11452b0c-768e-5ff7-0d63-eeb1d8ed8cef">
+                    Phòng Kế Toán
+                  </option>
+                  <option value="7686595d-16d5-33b3-0080-e8e2a817c80e">
+                    Phòng hành chính
+                  </option>
+                  <option value="142cb08f-7c31-21fa-8e90-67245e8b283e">
+                    Tổng công ty
+                  </option>
+                  <option value="2bbbd485-6df2-536a-7e32-6a1673ffca7c">
+                    Phòng liên kết nước ngoài
+                  </option>
+                  <option value="469b3ece-744a-45d5-957d-e8c757976496">
+                    Khối sản xuất
+                  </option>
+                  <option value="4e272fc4-7875-78d6-7d32-6a1673ffca7c">
+                    Ban dự án
+                  </option>
+                  <option value="768f8e64-7d10-20c9-967d-e8c757976496">
+                    Phòng bảo vệ
+                  </option>
+                </select>
+              </div>
+              <div class="content__nav-search--position">
+                <select class="select" name="" id="searchPosition">
+                  <option value="">Tất cả Vị trí</option>
+                  <option value="78aafe4a-67a7-2076-3bf3-eb0223d0a4f7">
+                    Trưởng phòng
+                  </option>
+                  <option value="647a538e-630d-39cd-0144-e5a214c15aa7">
+                    Kế Toán
+                  </option>
+                  <option value="75cce5a6-4f7f-3671-3cf3-eb0223d0a4f7">
+                    Nhân viên triển khai
+                  </option>
+                  <option value="78aafe4a-67a7-2076-3bf3-eb0223d0a4f7">
+                    Trưởng phòng
+                  </option>
+                  <option value="7c4f14d8-66fb-14ae-198f-6354f958f4c0">
+                    Tổng giám đốc
+                  </option>
+                  <option value="26fe1532-7e63-6a11-1a8f-6354f958f4c0">
+                    Giám đốc sản xuất
+                  </option>
+                  <option value="35e773ea-5d44-2dda-26a8-6d513e380bde">
+                    Nhân viên tư vấn
+                  </option>
+                  <option value="3f8e6896-4c7d-15f5-a018-75d8bd200d7c">
+                    Chủ tịch HĐQT
+                  </option>
+                  <option value="45ac3d26-18f2-18a9-3031-644313fbb055">
+                    Phó chủ tịch HĐQT
+                  </option>
+                  <option value="6f45e010-3200-5943-27a8-6d513e380bde">
+                    Giám đốc tuyển dụng
+                  </option>
+                  <option value="75cce5a6-4f7f-3671-3cf3-eb0223d0a4f7">
+                    Nhân viên triển khai
+                  </option>
+                  <option value="7c48a057-3c21-3db0-06a4-60fcae00630c">
+                    Bảo vệ
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="content__nav-button--reload">
+              <a><button id="refresh" class="m-button--duplicate"></button></a>
+            </div>
+            <div class="content__nav-button--reload">
+              <a href=""
+                ><button id="refresh" class="m-button--reload"></button
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table -->
+
+        <div class="m-table">
+          <table cellspacing="0">
+            <colgroup>
+              <col style="min-width: 20px" />
+              <col style="min-width: 35px" />
+              <col style="min-width: 125px" />
+              <col style="min-width: 175px" />
+              <col style="min-width: 105px" />
+              <col style="min-width: 125px" />
+              <col style="min-width: 150px" />
+              <col style="min-width: 150px" />
+              <col style="min-width: 150px" />
+              <col style="min-width: 150px" />
+              <col style="min-width: 150px" />
+              <col style="min-width: 175px" />
+              <col style="min-width: 120px" />
+              <col style="min-width: 30px" />
+              <col style="min-width: 20px" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th></th>
+                <th>
+                  <input type="checkbox" class="m-icon-checkbox th-checkbox" />
+                </th>
+                <th fieldName="employeeCode">MÃ NHÂN VIÊN</th>
+                <th fieldName="employeeName">TÊN NHÂN VIÊN</th>
+                <th fieldName="genderName">GIỚI TÍNH</th>
+                <th class="text-center" fieldName="dateOfBirth">NGÀY SINH</th>
+                <th fieldName="identityNumber">SỐ CMND/CĂN CƯỚC</th>
+                <th fieldName="positionName">BỘ PHẬN</th>
+                <th fieldName="departmentName">PHÒNG BAN</th>
+                <th fieldName="email">Email</th>
+                <th fieldName="phoneNumber">SỐ ĐIỆN THOẠI</th>
+                <th fieldName="salary" class="text-right">MỨC LƯƠNG CƠ BẢN</th>
+                <th class="text-center">PHÍM TẮT</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>ok luon</td>
+                <td>ok luon</td>
+                <td>ok luon</td>
+                <td>ok luon</td>
+                <td>ok luon</td>
+                <td>ok luon</td>
+                <td>ok luon</td>
+                <td>ok luon</td>
+                <td>ok luon</td>
+                <td>ok luon</td>
+                <td>ok luon</td>
+                <td>
+                  <div class="edit-employee"><span>Sửa</span></div>
+                  <div class="del-employee">
+                    <i class="bx bxs-down-arrow"></i>
+                  </div>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="delete" class="dialog-delete"><span>Xóa</span></div>
+          <div class="below-table">
+            <div class="no-data">
+              <img
+                class="img-no-data"
+                src="https://actappg1.misacdn.net/img/bg_report_nodata.76e50bd8.svg"
+                alt=""
+              />
+              <div>Không có dữ liệu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home_content__footer">
+        <div class="content__navpage">
+          <div class="content__navpage-left">
+            <p>Hiển thị <b class="page-size"></b>/<b class="total-record"></b> nhân viên</p>
+          </div>
+          <div>
+            <div class="content__navpage-lists paging">
+              <div class="navbar-lists__item p-left">
+                <img src="../../assets/icon/btn-firstpage.svg" alt="" />
+              </div>
+              <div class="navbar-lists__item p-left">
+                <img src="../../assets/icon/btn-prev-page.svg" alt="" />
+              </div>
+              <div class="paging-number"></div>
+              <!-- <div class="navbar-lists__item"> -->
+              <!-- <button class="m-btn-circle" style="background-color: var(--primary-color)">
+                    1
+                  </button>
+                        </li>
+                        <div class="navbardivsts__item">
+                            <button class="m-btn-circle">2</button>
+                        </div>
+                        <li class="navbar-lists__item">
+                            <button class="m-btn-circle">3</button>
+                        </li>
+                        <li class="navbar-lists__item">
+                            <button class="m-btn-circle">4</button> -->
+              <!-- </div> -->
+              <div class="navbar-lists__item p-right">
+                <img src="../../assets/icon/btn-next-page.svg" alt="" />
+              </div>
+              <div class="navbar-lists__item p-right">
+                <img src="../../assets/icon/btn-lastpage.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="content__navpage-right paging-bar">
+            <div class="mselect" id="cbxPageSize">
+              <div class="select">10 nhân viên trên trang</div>
+              <div class="icon-select show-select"></div>
+              <div
+                class="icon-dropdown m-icon m-icon-dropdown-select show-select"
+              ></div>
+
+              <div class="data-select" id="dataSelect">
+                <div class="select-item item-10" value="10">
+                  10 nhân viên trên trang
+                </div>
+                <div class="select-item item-20" value="20">
+                  20 nhân viên trên trang
+                </div>
+                <div class="select-item item-30" value="30">
+                  30 nhân viên trên trang
+                </div>
+                <div class="select-item item-50" value="50">
+                  50 nhân viên trên trang
+                </div>
+                <div class="select-item item-100" value="100">
+                  100 nhân viên trên trang
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========================================================== Dialog ============================================================= -->
+
+    <div class="s-dialog">
+      <div class="s-modal"></div>
+      <div class="ms-dialog">
+        <div class="ms-dialog-header">
+          <div class="header-text">THÔNG TIN NHÂN VIÊN</div>
+          <div id="icon-close" class="header-icon">
+            <img src="./assets/icon/x.svg" alt="" />
+          </div>
+        </div>
+        <div class="ms-dialog-content">
+          <div class="content-avatar">
+            <img src="/assets/img/default-avatar.jpg" alt="" />
+          </div>
+          <div class="content-info">
+            <div class="info-a">
+              <div class="info-a__header">A.THÔNG TIN CHUNG</div>
+              <div class="info-a__content">
+                <div class="input-id-name">
+                  <div class="input-id">
+                    <label for=""
+                      >Mã nhân viên (<span style="color: rgb(230, 20, 20)"
+                        >*</span
+                      >)</label
+                    >
+                    <input
+                      propId="EmployeeId"
+                      propName="employeeCode"
+                      required
+                      id="txtEmployeeCode"
+                      class="m-input"
+                      type="text"
+                    />
+                  </div>
+                  <div class="input-name">
+                    <label for=""
+                      >Họ và tên (<span style="color: rgb(230, 20, 20)">*</span
+                      >)</label
+                    >
+                    <input
+                      propName="employeeName"
+                      required
+                      id="txtEmployeeName"
+                      class="m-input"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="input-id-name">
+                  <div class="input-id">
+                    <label for="">Ngày sinh</label>
+                    <input
+                      propName="dateOfBirth"
+                      id="txtDateOfBirth"
+                      class="m-input"
+                      type="date"
+                    />
+                  </div>
+                  <div class="input-name">
+                    <label for="">Giới tính</label>
+
+                    <select
+                      propName="gender"
+                      class="select"
+                      name=""
+                      id="cbxNameGender"
+                    >
+                      <option value="0">Nam</option>
+                      <option value="1">Nữ</option>
+                      <option value="2">Khác</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-id-name">
+                  <div class="input-id">
+                    <label for=""
+                      >Số CMTND/Căn cước(<span style="color: rgb(230, 20, 20)"
+                        >*</span
+                      >)</label
+                    >
+                    <input
+                      propName="identityNumber"
+                      required
+                      id="txtEmployeeIdentityNumber"
+                      class="m-input"
+                      type="text"
+                    />
+                  </div>
+                  <div class="input-name">
+                    <label for="">Ngày cấp</label>
+                    <input
+                      propName="identityIssuedDate"
+                      id="txtIdentityDate"
+                      class="m-input"
+                      type="date"
+                    />
+                  </div>
+                </div>
+                <div class="input-id-name">
+                  <div class="input-id">
+                    <label for="">Nơi cấp</label>
+                    <input
+                      propName="identityIssuedPlace"
+                      id="txtIdentityPlace"
+                      class="m-input"
+                      type="text"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-id-name">
+                  <div class="input-id">
+                    <label for=""
+                      >Email(<span style="color: rgb(230, 20, 20)">*</span
+                      >)</label
+                    >
+                    <input
+                      propName="email"
+                      required
+                      id="txtEmail"
+                      class="m-input"
+                      type="email"
+                    />
+                  </div>
+                  <div class="input-name">
+                    <label for=""
+                      >Số điện thoại(<span style="color: rgb(230, 20, 20)"
+                        >*</span
+                      >)</label
+                    >
+                    <input
+                      propName="phoneNumber"
+                      required
+                      id="txtPhoneNumber"
+                      class="m-input"
+                      type="tel"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info-b">
+              <div class="info-b__header">B.THÔNG TIN CÔNG VIỆC</div>
+              <div class="input-id-name">
+                <div class="input-id">
+                  <label for="">Vị Trí</label>
+                  <select
+                    propName="positionID"
+                    class="select"
+                    name=""
+                    id="txtPositionId"
+                  >
+                    <option value="78aafe4a-67a7-2076-3bf3-eb0223d0a4f7">
+                      Trưởng phòng
+                    </option>
+                    <option value="647a538e-630d-39cd-0144-e5a214c15aa7">
+                      Kế Toán
+                    </option>
+                    <option value="75cce5a6-4f7f-3671-3cf3-eb0223d0a4f7">
+                      Nhân viên triển khai
+                    </option>
+                    <option value="78aafe4a-67a7-2076-3bf3-eb0223d0a4f7">
+                      Trưởng phòng
+                    </option>
+                    <option value="7c4f14d8-66fb-14ae-198f-6354f958f4c0">
+                      Tổng giám đốc
+                    </option>
+                    <option value="26fe1532-7e63-6a11-1a8f-6354f958f4c0">
+                      Giám đốc sản xuất
+                    </option>
+                    <option value="35e773ea-5d44-2dda-26a8-6d513e380bde">
+                      Nhân viên tư vấn
+                    </option>
+                    <option value="3f8e6896-4c7d-15f5-a018-75d8bd200d7c">
+                      Chủ tịch HĐQT
+                    </option>
+                    <option value="45ac3d26-18f2-18a9-3031-644313fbb055">
+                      Phó chủ tịch HĐQT
+                    </option>
+                    <option value="6f45e010-3200-5943-27a8-6d513e380bde">
+                      Giám đốc tuyển dụng
+                    </option>
+                    <option value="75cce5a6-4f7f-3671-3cf3-eb0223d0a4f7">
+                      Nhân viên triển khai
+                    </option>
+                    <option value="7c48a057-3c21-3db0-06a4-60fcae00630c">
+                      Bảo vệ
+                    </option>
+                  </select>
+                </div>
+                <div class="input-name">
+                  <label for="">Phòng Ban</label>
+                  <select
+                    propName="departmentID"
+                    class="select"
+                    name=""
+                    id="txtDepartmentId"
+                  >
+                    <option value="59d19422-6657-452e-a7db-e5d54223c257">
+                      Phòng Nhân Sự
+                    </option>
+                    <option value="4577565a-7e3e-493a-74dd-867949feb8b5">
+                      Phòng Kế Hoạch
+                    </option>
+                    <option value="17120d02-6ab5-3e43-18cb-66948daf6128">
+                      Phòng Hỗ Trợ Khách Hàng
+                    </option>
+                    <option value="11452b0c-768e-5ff7-0d63-eeb1d8ed8cef">
+                      Phòng Kế Toán
+                    </option>
+                    <option value="7686595d-16d5-33b3-0080-e8e2a817c80e">
+                      Phòng hành chính
+                    </option>
+                    <option value="142cb08f-7c31-21fa-8e90-67245e8b283e">
+                      Tổng công ty
+                    </option>
+                    <option value="2bbbd485-6df2-536a-7e32-6a1673ffca7c">
+                      Phòng liên kết nước ngoài
+                    </option>
+                    <option value="469b3ece-744a-45d5-957d-e8c757976496">
+                      Khối sản xuất
+                    </option>
+                    <option value="4e272fc4-7875-78d6-7d32-6a1673ffca7c">
+                      Ban dự án
+                    </option>
+                    <option value="768f8e64-7d10-20c9-967d-e8c757976496">
+                      Phòng bảo vệ
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-id-name">
+                <div class="input-id">
+                  <label for="">Mã số thuế cá nhân</label>
+                  <input
+                    propName="taxCode"
+                    id="txtPersonalTaxCode"
+                    class="m-input"
+                    type="text"
+                  />
+                </div>
+                <div class="input-name">
+                  <label for="">Mức lương cơ bản</label>
+                  <input
+                    propName="salary"
+                    class="m-input"
+                    type="number"
+                    id="txtSalary"
+                  />
+                </div>
+              </div>
+              <div class="input-id-name">
+                <div class="input-id">
+                  <label for="">Gia nhập công ty</label>
+                  <input class="m-input" type="date" />
+                </div>
+                <div class="input-name">
+                  <label for="">Tình trạng công việc</label>
+                  <select class="select" name="" id="">
+                    <option value="">Đang làm việc</option>
+                    <option value="">Khác</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ms-dialog-footer">
+          <div class="cancel-btn">
+            <button class="m-second-btn">Hủy</button>
+          </div>
+          <div class="save-btn"><button class="m-button">Lưu</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!--========================= PHẦN POPUP =============================================================== -->
+    <div id="popup" class="m-popup">
+      <div class="m-modal modal-popup"></div>
+      <div class="popup">
+        <div class="popup-content">
+          <div>
+            <div id="icon-warningg" class="icon-warning m-icon m-icon-warning"></div>
+            <div class="messenger-warning"></div>
+          </div>
+          <div class="mess-line"></div>
+        </div>
+        <div class="popup-bottom">
+          <div class="popup-bot-left"></div>
+          <div class="popup-bot-right">
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--========================= TOAST MESSAGE =============================================================== -->
+
+    <!-- success -->
+    <div id="toast__success">
+      <div class="toast--success toast__icon toastmsg">
+        <div class="toast__icon">
+          <i class="fas fa-circle-check"></i>
+        </div>
+        <div class="toast__body">
+          <h3 class="toast__title">Thao tác thành công!</h3>
+        </div>
+        <div class="toast__close">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+    </div>
+    <!-- edit success -->
+    <div id="toast__success-edit">
+      <div class="toast--success toast__icon toastmsg">
+        <div class="toast__icon">
+          <i class="fas fa-circle-check"></i>
+        </div>
+        <div class="toast__body">
+          <h3 class="toast__title">Success</h3>
+          <p class="toast__msg">Sửa thành công!</p>
+        </div>
+        <div class="toast__close">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- error -->
+    <div id="toast__error">
+      <div class="toast--error toast__icon toastmsg">
+        <div class="toast__icon">
+          <i class="fas fa-circle-check"></i>
+        </div>
+        <div class="toast__body">
+          <h3 class="toast__title">Error</h3>
+          <p class="toast__msg">Thêm mới thất bại!</p>
+        </div>
+        <div class="toast__close">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+    </div>
+    <!--========================= PHẦN LOADING =============================================================== -->
+
+    <div class="loading-data">
+      <div class="m-modal"></div>
+      <div class="m-loading"></div>
+    </div>
+
+    <!-- Thư viện -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- JS sử dụng chung -->
+    <script src="../../js/common/enum.js"></script>
+    <script src="../../js/common/main.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <!-- JS sử dụng riêng -->
+    <script src="../../js/page/employee.js"></script>
+    <script src="../../js/page/navbar.js"></script>
+  </body>
+</html>

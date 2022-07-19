@@ -1,0 +1,194 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar {
+    height: 100%;
+    width: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(0, #2FBE8E, #037e55);
+    padding: 6px 10px;
+    z-index: 200000;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar.active {
+    width: 240px;
+}
+
+.sidebar .logo_content .logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active .logo_content .logo {
+    opacity: 1;
+}
+
+.logo_content .logo i {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.logo_content .logo .logo_name {
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+.logo_content .logo .icon-misasoftware {
+    height: 27px;
+    width: 27px;
+    margin-right: 10px;
+}
+
+.sidebar #btn-toggle {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn-toggle {
+    left: 90%;
+}
+
+.sidebar ul {
+    margin-top: 17px;
+}
+
+.sidebar ul li {
+    position: relative;
+    list-style: none;
+    height: 50px;
+    width: 100%;
+    margin: 0 0px;
+    line-height: 50px;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    line-height: 35px;
+    text-align: center;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+.sidebar ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    top: 50%;
+    opacity: 1;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.1s ease;
+    padding-left: 14px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover {
+    color: var( --primary-color);
+    background: #fff;
+}
+
+.sidebar ul li a i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    font-size: 22px;
+}
+
+.sidebar.active .links_name {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .links_name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+.extra-nav {
+    background-image: url(../../assets/icon/btn-next-page.svg);
+    background-position: center center;
+    border-radius: 4px;
+    position: absolute;
+    right: 2px;
+    bottom: 91px;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.sidebar.active .extra-nav {
+    display: none;
+}
+
+.min-nav {
+    background-image: url(../../assets/icon/btn-prev-page.svg);
+    background-position: center center;
+    border-radius: 4px;
+    position: absolute;
+    right: 2px;
+    bottom: 91px;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    display: none;
+}
+
+.sidebar.active .min-nav {
+    display: flex;
+    cursor: pointer;
+}
